@@ -1,0 +1,310 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"mq.ibm.com/v1beta1","kind":"QueueManager","metadata":{"annotations":{},"name":"orders","namespace":"cp4i"},"spec":{"license":{"accept":true,"license":"L-VTPK-22YZPK","use":"NonProduction"},"queueManager":{"mqsc":[{"configMap":{"items":["mq.mqsc"],"name":"order"}}],"resources":{"limits":{"cpu":"1000m"},"requests":{"cpu":"100m"}}},"template":{"pod":{"containers":[{"env":[{"name":"MQSNOAUT","value":"yes"}],"name":"qmgr"}]}},"version":"9.3.4.0-r1","web":{"enabled":true}}}
+  resourceVersion: '1006078'
+  name: orders
+  uid: b54a924e-5b4d-436f-9d55-5185d6bfb961
+  creationTimestamp: '2024-03-19T10:29:38Z'
+  generation: 8
+  managedFields:
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:spec':
+          .: {}
+          'f:license':
+            .: {}
+            'f:accept': {}
+            'f:license': {}
+            'f:use': {}
+          'f:queueManager':
+            .: {}
+            'f:mqsc': {}
+            'f:resources':
+              .: {}
+              'f:limits': {}
+              'f:requests':
+                .: {}
+                'f:cpu': {}
+          'f:template':
+            .: {}
+            'f:pod': {}
+          'f:version': {}
+          'f:web':
+            .: {}
+            'f:enabled': {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2024-03-19T10:29:38Z'
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:finalizers':
+            .: {}
+            'v:"finalizer.queuemanagers.mq.ibm.com"': {}
+        'f:spec':
+          'f:license':
+            'f:metric': {}
+          'f:queueManager':
+            'f:logFormat': {}
+            'f:storage':
+              .: {}
+              'f:persistedData':
+                .: {}
+                'f:enabled': {}
+              'f:queueManager':
+                .: {}
+                'f:size': {}
+                'f:type': {}
+              'f:recoveryLogs':
+                .: {}
+                'f:enabled': {}
+              'f:scratch': {}
+              'f:tmp': {}
+            'f:metrics':
+              .: {}
+              'f:enabled': {}
+            'f:availability':
+              .: {}
+              'f:type': {}
+              'f:updateStrategy': {}
+            'f:resources':
+              'f:limits':
+                'f:cpu': {}
+                'f:memory': {}
+              'f:requests':
+                'f:memory': {}
+            'f:route':
+              .: {}
+              'f:enabled': {}
+            'f:livenessProbe':
+              .: {}
+              'f:failureThreshold': {}
+              'f:initialDelaySeconds': {}
+              'f:periodSeconds': {}
+              'f:successThreshold': {}
+              'f:timeoutSeconds': {}
+            'f:readinessProbe':
+              .: {}
+              'f:failureThreshold': {}
+              'f:initialDelaySeconds': {}
+              'f:periodSeconds': {}
+              'f:successThreshold': {}
+              'f:timeoutSeconds': {}
+            'f:imagePullPolicy': {}
+            'f:debug': {}
+          'f:securityContext':
+            .: {}
+            'f:initVolumeAsRoot': {}
+            'f:readOnlyRootFilesystem': {}
+          'f:telemetry':
+            .: {}
+            'f:tracing':
+              .: {}
+              'f:instana':
+                .: {}
+                'f:enabled': {}
+                'f:protocol': {}
+          'f:template':
+            'f:pod':
+              'f:containers': {}
+          'f:terminationGracePeriodSeconds': {}
+          'f:tracing':
+            .: {}
+            'f:agent': {}
+            'f:collector': {}
+            'f:enabled': {}
+            'f:namespace': {}
+          'f:web':
+            'f:console':
+              .: {}
+              'f:authentication':
+                .: {}
+                'f:provider': {}
+              'f:authorization':
+                .: {}
+                'f:provider': {}
+      manager: Go-http-client
+      operation: Update
+      time: '2024-03-20T08:57:49Z'
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:web':
+            'f:manualConfig':
+              .: {}
+              'f:configMap':
+                .: {}
+                'f:name': {}
+      manager: Mozilla
+      operation: Update
+      time: '2024-03-20T11:27:09Z'
+    - apiVersion: mq.ibm.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:adminUiUrl': {}
+          'f:conditions': {}
+          'f:endpoints': {}
+          'f:metadata':
+            .: {}
+            'f:integrationKeycloak':
+              .: {}
+              'f:clientName': {}
+          'f:name': {}
+          'f:phase': {}
+          'f:versions':
+            .: {}
+            'f:available':
+              .: {}
+              'f:channels': {}
+              'f:versions': {}
+            'f:reconciled': {}
+      manager: Go-http-client
+      operation: Update
+      subresource: status
+      time: '2024-03-20T11:44:06Z'
+  namespace: cp4i
+  finalizers:
+    - finalizer.queuemanagers.mq.ibm.com
+spec:
+  license:
+    accept: true
+    license: L-VTPK-22YZPK
+    metric: VirtualProcessorCore
+    use: NonProduction
+  tracing:
+    agent: {}
+    collector: {}
+    enabled: false
+    namespace: ''
+  terminationGracePeriodSeconds: 30
+  securityContext:
+    initVolumeAsRoot: false
+    readOnlyRootFilesystem: false
+  web:
+    console:
+      authentication:
+        provider: integration-keycloak
+      authorization:
+        provider: integration-keycloak
+    enabled: true
+    manualConfig:
+      configMap:
+        name: example-qm-web-configmap
+  version: 9.3.4.0-r1
+  telemetry:
+    tracing:
+      instana:
+        enabled: false
+        protocol: http
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: 'yes'
+          name: qmgr
+          resources: {}
+  queueManager:
+    metrics:
+      enabled: true
+    resources:
+      limits:
+        cpu: '1'
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 1Gi
+    readinessProbe:
+      failureThreshold: 1
+      initialDelaySeconds: 10
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+    route:
+      enabled: true
+    livenessProbe:
+      failureThreshold: 1
+      initialDelaySeconds: 90
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 5
+    imagePullPolicy: IfNotPresent
+    debug: false
+    mqsc:
+      - configMap:
+          items:
+            - mq.mqsc
+          name: order
+    logFormat: Basic
+    availability:
+      type: SingleInstance
+      updateStrategy: RollingUpdate
+    storage:
+      persistedData:
+        enabled: false
+      queueManager:
+        size: 2Gi
+        type: persistent-claim
+      recoveryLogs:
+        enabled: false
+      scratch: {}
+      tmp: {}
+status:
+  adminUiUrl: 'https://orders-ibm-mq-web-cp4i.apps.65f94d321ba90d001e7beff2.cloud.techzone.ibm.com/ibmmq/console/'
+  conditions: []
+  endpoints:
+    - name: ui
+      type: UI
+      uri: 'https://orders-ibm-mq-web-cp4i.apps.65f94d321ba90d001e7beff2.cloud.techzone.ibm.com/ibmmq/console/'
+  metadata:
+    integrationKeycloak:
+      clientName: queuemanager-cp4i-orders-h2km4
+  name: orders
+  phase: Running
+  versions:
+    available:
+      channels: []
+      versions:
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.4.1
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-VTPK-22YZPK'
+              matchesCurrentType: true
+              name: L-VTPK-22YZPK
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.4.1
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-QYQF-8UFZBN'
+              name: L-QYQF-8UFZBN
+            - displayName: IBM MQ Advanced 9.3 – 05/2023 and IBM MQ Advanced for Non-Production Environment 9.3 – 05/2023
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-AMRD-XH6P3Q'
+              name: L-AMRD-XH6P3Q
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3 - 05/2023
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-AXAF-JLZ53A'
+              name: L-AXAF-JLZ53A
+          name: 9.3.4.1-r1
+        - licenses:
+            - displayName: IBM Cloud Pak for Integration 2023.4.1
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-VTPK-22YZPK'
+              matchesCurrentType: true
+              name: L-VTPK-22YZPK
+            - displayName: IBM Cloud Pak for Integration Limited Edition 2023.4.1
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-QYQF-8UFZBN'
+              name: L-QYQF-8UFZBN
+            - displayName: IBM MQ Advanced 9.3 – 05/2023 and IBM MQ Advanced for Non-Production Environment 9.3 – 05/2023
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-AMRD-XH6P3Q'
+              name: L-AMRD-XH6P3Q
+            - displayName: IBM MQ Advanced for Developers (Non-Warranted) 9.3 - 05/2023
+              link: 'https://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-AXAF-JLZ53A'
+              name: L-AXAF-JLZ53A
+          name: 9.3.4.0-r1
+    reconciled: 9.3.4.0-r1
